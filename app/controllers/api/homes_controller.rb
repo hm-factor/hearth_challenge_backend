@@ -2,7 +2,11 @@ class Api::HomesController < ApplicationController
 
   def search
     @search = params[:search_params]
-    @homes = Home.where("address like ?", "%#{@search}%")
+    if @search = ''
+      @homes = Home.limit(10)
+    else
+      @homes = Home.where('lower(address) like ?', '%#{@search}%')
+    end
     render :search
   end
 
