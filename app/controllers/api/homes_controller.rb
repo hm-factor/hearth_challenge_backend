@@ -1,7 +1,8 @@
 class Api::HomesController < ApplicationController
 
   def search
-    @homes = Home.all
+    @search = params[:search_params]
+    @homes = Home.where("address like ?", "%#{@search}%")
     render :search
   end
 
