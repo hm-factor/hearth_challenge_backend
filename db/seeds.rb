@@ -22,6 +22,7 @@ csv.each do |row|
     beds: row['BEDS'],
     baths: row['BATHS'],
     location: row['LOCATION'],
-    square_feet: row['SQUARE FEET']
+    square_feet: row['SQUARE FEET'],
+    url: row['URL']
   })
 end
