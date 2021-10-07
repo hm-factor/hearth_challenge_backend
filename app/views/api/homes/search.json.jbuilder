@@ -1,5 +1,3 @@
 json.array!(@homes) do |home|
-  json.set! home.id do
-    json.partial! 'api/homes/home', home: home
-  end
+  json.partial! 'api/homes/home', home: home
 end
